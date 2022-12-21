@@ -1,7 +1,7 @@
 package br.com.medvoll.controller;
 
-import br.com.medvoll.controller.dto.request.RegisterDoctorRequest;
-import br.com.medvoll.controller.dto.request.UpdateDoctorRequest;
+import br.com.medvoll.controller.dto.request.doctor.RegisterDoctorRequest;
+import br.com.medvoll.controller.dto.request.doctor.UpdateDoctorRequest;
 import br.com.medvoll.controller.dto.response.DoctorListResponse;
 import br.com.medvoll.controller.dto.response.DetailsDoctorResponse;
 import br.com.medvoll.entity.doctor.DoctorEntity;

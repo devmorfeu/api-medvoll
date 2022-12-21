@@ -1,7 +1,7 @@
 package br.com.medvoll.entity.doctor;
 
-import br.com.medvoll.controller.dto.request.RegisterDoctorRequest;
-import br.com.medvoll.controller.dto.request.UpdateDoctorRequest;
+import br.com.medvoll.controller.dto.request.doctor.RegisterDoctorRequest;
+import br.com.medvoll.controller.dto.request.doctor.UpdateDoctorRequest;
 import br.com.medvoll.enums.Specialty;
 import jakarta.persistence.*;
 import lombok.Getter;

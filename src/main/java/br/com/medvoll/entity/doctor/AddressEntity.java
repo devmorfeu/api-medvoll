@@ -1,6 +1,6 @@
 package br.com.medvoll.entity.doctor;
 
-import br.com.medvoll.controller.dto.request.AddressRequest;
+import br.com.medvoll.controller.dto.request.doctor.AddressRequest;
 import jakarta.persistence.Embeddable;
 
 @Embeddable

@@ -1,4 +1,4 @@
-package br.com.medvoll.controller.dto.request;
+package br.com.medvoll.controller.dto.request.doctor;
 
 import br.com.medvoll.enums.Specialty;
 import jakarta.validation.Valid;

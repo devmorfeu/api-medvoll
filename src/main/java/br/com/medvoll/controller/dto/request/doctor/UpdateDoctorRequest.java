@@ -1,4 +1,4 @@
-package br.com.medvoll.controller.dto.request;
+package br.com.medvoll.controller.dto.request.doctor;
 
 public record UpdateDoctorRequest(
         Long id,

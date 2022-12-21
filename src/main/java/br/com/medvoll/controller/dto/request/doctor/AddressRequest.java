@@ -1,4 +1,4 @@
-package br.com.medvoll.controller.dto.request;
+package br.com.medvoll.controller.dto.request.doctor;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
