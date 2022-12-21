@@ -1,7 +1,7 @@
 package br.com.medvoll.controller.dto.response;
 
-import br.com.medvoll.entity.AddressEntity;
-import br.com.medvoll.entity.DoctorEntity;
+import br.com.medvoll.entity.doctor.AddressEntity;
+import br.com.medvoll.entity.doctor.DoctorEntity;
 import br.com.medvoll.enums.Specialty;
 
 public record DetailsDoctorResponse(Long id, String name, String email, String crm, Specialty specialty, AddressEntity addressEntity) {

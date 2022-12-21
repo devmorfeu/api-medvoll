@@ -1,4 +1,4 @@
-package br.com.medvoll.entity;
+package br.com.medvoll.entity.doctor;
 
 import br.com.medvoll.controller.dto.request.RegisterDoctorRequest;
 import br.com.medvoll.controller.dto.request.UpdateDoctorRequest;

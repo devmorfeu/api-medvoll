@@ -4,7 +4,7 @@ import br.com.medvoll.controller.dto.request.RegisterDoctorRequest;
 import br.com.medvoll.controller.dto.request.UpdateDoctorRequest;
 import br.com.medvoll.controller.dto.response.DoctorListResponse;
 import br.com.medvoll.controller.dto.response.DetailsDoctorResponse;
-import br.com.medvoll.entity.DoctorEntity;
+import br.com.medvoll.entity.doctor.DoctorEntity;
 import br.com.medvoll.repository.DoctorRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
