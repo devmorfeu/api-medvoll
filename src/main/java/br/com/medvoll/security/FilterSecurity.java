@@ -7,14 +7,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
-import static org.springframework.security.core.context.SecurityContextHolder.*;
+import static org.springframework.security.core.context.SecurityContextHolder.getContext;
 
 @Component
 @RequiredArgsConstructor
@@ -32,7 +30,7 @@ public class FilterSecurity extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    private String getSubjectToken(HttpServletRequest request) {
+    private void getSubjectToken(HttpServletRequest request) {
 
         final var token = request.getHeader("Authorization");
 
@@ -46,7 +44,5 @@ public class FilterSecurity extends OncePerRequestFilter {
 
             getContext().setAuthentication(authentication);
         }
-
-        return null;
     }
 }
