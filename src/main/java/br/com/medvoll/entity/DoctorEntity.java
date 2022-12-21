@@ -1,6 +1,7 @@
 package br.com.medvoll.entity;
 
 import br.com.medvoll.controller.dto.request.RegisterDoctorRequest;
+import br.com.medvoll.controller.dto.request.UpdateDoctorRequest;
 import br.com.medvoll.enums.Specialty;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -15,7 +16,7 @@ public class DoctorEntity {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
-    private String id;
+    private Long id;
 
     private String name;
 
@@ -38,5 +39,11 @@ public class DoctorEntity {
         this.crm = registerDoctorRequest.crm();
         this.specialty = registerDoctorRequest.specialty();
         this.addressEntity = new AddressEntity(registerDoctorRequest.addressRequest());
+    }
+
+    public void updateData(UpdateDoctorRequest updateDoctorRequest) {
+        this.name = updateDoctorRequest.name();
+        this.phone = updateDoctorRequest.phone();
+        this.addressEntity.updateData(updateDoctorRequest.addressRequest());
     }
 }

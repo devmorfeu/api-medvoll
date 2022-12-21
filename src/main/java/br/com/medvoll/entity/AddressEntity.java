@@ -21,4 +21,13 @@ public class AddressEntity {
         this.complement = addressRequest.complement();
         this.number = addressRequest.number();
     }
+
+    public void updateData(AddressRequest addressRequest) {
+        this.publicPlace = addressRequest.publicPlace();
+        this.district = addressRequest.district();
+        this.zipCode = addressRequest.zipCode();
+        this.fu = addressRequest.fu();
+        this.complement = addressRequest.complement();
+        this.number = addressRequest.number();
+    }
 }
