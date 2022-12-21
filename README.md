@@ -21,5 +21,5 @@ Aplicação back-end com foco em aprender spring-3.0.0 e java 17;
 * [x] baixe o projeto do GitHub com `git clone`.
 
 ### Apêndice
-* [x] para utilizar a API, use o [Postman](https://insomnia.rest/download).
+* [x] para utilizar a API, use o [Insomnia](https://insomnia.rest/download).
   - `/collections/medvoll_collection.json`
