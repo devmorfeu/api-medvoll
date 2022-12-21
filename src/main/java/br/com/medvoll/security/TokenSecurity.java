@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.Instant;
 
+import static com.auth0.jwt.JWT.*;
 import static com.auth0.jwt.algorithms.Algorithm.*;
 import static java.time.LocalDateTime.now;
 import static java.time.ZoneOffset.of;
@@ -17,11 +18,22 @@ public class TokenSecurity {
     @Value("${api.security.token.secret}")
     private String secret;
 
+    public String getSubjectToken(String token) {
+
+        final var encrypt = HMAC256(secret);
+
+        return JWT.require(encrypt)
+                .withIssuer("API medVoll")
+                .build()
+                .verify(token)
+                .getSubject();
+    }
+
     public String createToken(User user) {
 
         final var encrypt = HMAC256(secret);
 
-        return JWT.create()
+        return create()
                 .withIssuer("API medVoll")
                 .withSubject(user.getLogin())
                 .withClaim("id", user.getUsername())
