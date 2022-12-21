@@ -7,9 +7,9 @@ import br.com.medvoll.repository.DoctorRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("v1")
@@ -25,7 +25,7 @@ public class DoctorController {
     }
 
     @GetMapping("/medicos")
-    public List<DoctorListResponse> list() {
-        return doctorRepository.findAll().stream().map(DoctorListResponse::new).toList();
+    public Page<DoctorListResponse> list(Pageable pageable) {
+        return doctorRepository.findAll(pageable).map(DoctorListResponse::new);
     }
 }
