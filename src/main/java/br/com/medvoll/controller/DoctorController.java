@@ -25,12 +25,14 @@ public class DoctorController {
     @PostMapping("/medicos")
     @Transactional
     public void register(@RequestBody @Valid RegisterDoctorRequest registerDoctorRequest) {
+
         doctorRepository.save(new DoctorEntity(registerDoctorRequest));
     }
 
     @GetMapping("/medicos")
     public Page<DoctorListResponse> list(@PageableDefault(size = 5, sort = {"nome"}) Pageable pageable) {
-        return doctorRepository.findAll(pageable).map(DoctorListResponse::new);
+
+        return doctorRepository.findAllByActiveTrue(pageable).map(DoctorListResponse::new);
     }
 
     @PutMapping("/medicos")
@@ -44,6 +46,9 @@ public class DoctorController {
 
     @DeleteMapping("medicos/{id}")
     public void delete(@PathVariable Long id) {
-        doctorRepository.deleteById(id);
+
+        final var doctor = doctorRepository.getReferenceById(id);
+
+        doctor.exclude();
     }
 }

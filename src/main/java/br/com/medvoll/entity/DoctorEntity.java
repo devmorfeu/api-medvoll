@@ -32,6 +32,8 @@ public class DoctorEntity {
     @Embedded
     private AddressEntity addressEntity;
 
+    private Boolean active;
+
     public DoctorEntity(RegisterDoctorRequest registerDoctorRequest) {
         this.name = registerDoctorRequest.name();
         this.email = registerDoctorRequest.email();
@@ -39,11 +41,16 @@ public class DoctorEntity {
         this.crm = registerDoctorRequest.crm();
         this.specialty = registerDoctorRequest.specialty();
         this.addressEntity = new AddressEntity(registerDoctorRequest.addressRequest());
+        this.active = true;
     }
 
     public void updateData(UpdateDoctorRequest updateDoctorRequest) {
         this.name = updateDoctorRequest.name();
         this.phone = updateDoctorRequest.phone();
         this.addressEntity.updateData(updateDoctorRequest.addressRequest());
+    }
+
+    public void exclude() {
+        this.active = false;
     }
 }
